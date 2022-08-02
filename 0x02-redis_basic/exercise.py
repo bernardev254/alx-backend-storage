@@ -4,8 +4,7 @@
 
 import uuid
 import redis
-from typing import Union
-from collections.abc import Callable
+from typing import Union, Callable
 from functools import wraps
 
 
