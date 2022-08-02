@@ -12,7 +12,7 @@ red = redis.Redis()
 def tracker(method: Callable) -> Callable:
     """"decorator tracking  url access"""
     @wraps(method)
-    def wrapper(url: str) -> str:
+    def wrapper(url) -> str:
         red.incr("count:{}".format(url))
         htmlcache = red.get("cached:{}".format(url))
         if htmlcache:
