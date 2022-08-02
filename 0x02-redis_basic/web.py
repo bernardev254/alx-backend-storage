@@ -1,9 +1,9 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """expiring web cache and tracker implementation"""
 
 import requests
 import redis
-from collections.abc import Callable
+from typing import Callable
 from functools import wraps
 
 red = redis.Redis()
