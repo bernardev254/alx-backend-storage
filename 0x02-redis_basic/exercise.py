@@ -47,7 +47,7 @@ def replay(func: Callable):
     except Exception:
         calls = 0
 
-    print("{} was called {} times".format(func.__qualname__, calls))
+    print("{} was called {} times:".format(func.__qualname__, calls))
     inputs = red.lrange("{}:inputs".format(func.__qualname__), 0, -1)
     outputs = red.lrange("{}:outputs".format(func.__qualname__), 0, -1)
 
